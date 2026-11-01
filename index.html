@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080a0e" />
+    <title>Argentina Roleplay | Centro de comunidad</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="auth-gate" id="authGate">
+      <div class="auth-card">
+        <img class="auth-logo" src="assets/logo.png" alt="Argentina Roleplay" />
+        <span class="eyebrow">PORTAL OFICIAL</span>
+        <h1>Ingresá con Discord</h1>
+        <p>Tu cuenta, rango, tickets y sanciones se cargan de forma segura desde Discord. Necesitás autenticarte para continuar.</p>
+        <a class="discord-login" id="discordLogin" href="/api/auth/discord"><span>◉</span> Iniciar sesión con Discord</a>
+        <small class="auth-note">Serás redirigido a la autorización oficial de Discord.</small>
+        <div class="auth-error" id="authError" hidden></div>
+      </div>
+    </div>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <img src="assets/logo.png" alt="Argentina Roleplay" />
+          <div><strong>ARGENTINA</strong><span>ROLEPLAY</span></div>
+        </div>
+        <div class="server-pill"><i></i><div><b>Servidor</b><small>Estado no configurado</small></div></div>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <p>COMUNIDAD</p>
+          <button class="nav-item active" data-view="home"><span>⌂</span>Inicio</button>
+          <button class="nav-item" data-view="profile"><span>◉</span>Mi perfil</button>
+          <button class="nav-item" data-view="tickets"><span>▣</span>Mis tickets <em>2</em></button>
+          <button class="nav-item" data-view="reports"><span>⚑</span>Reportes</button>
+          <button class="nav-item" data-view="sanctions"><span>◌</span>Mis sanciones</button>
+          <button class="nav-item" data-view="notifications"><span>♧</span>Notificaciones <em class="notification-count">3</em></button>
+          <button class="nav-item" data-view="news"><span>▤</span>Noticias</button>
+          <p class="staff-label">STAFF PANEL</p>
+          <button class="nav-item staff-only" data-view="admin"><span>▦</span>Administración <em class="admin-badge">STAFF</em></button>
+          <button class="nav-item staff-only" data-view="investigations"><span>⌕</span>Investigaciones</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <button class="nav-item" data-view="settings"><span>⚙</span>Configuración</button>
+          <button class="logout" id="logoutBtn"><span>↪</span>Cerrar sesión</button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" id="menuBtn" aria-label="Abrir menú">☰</button>
+          <div class="breadcrumbs"><span>Portal de comunidad</span><b>/</b><strong id="pageTitle">Inicio</strong></div>
+          <div class="top-actions">
+            <button class="icon-btn notification-trigger" data-view="notifications" aria-label="Notificaciones">♧<i></i></button>
+            <div class="user-menu">
+              <button class="user-trigger"><img src="assets/avatar.svg" alt="" /><span><b>Discord</b><small>USUARIO</small></span><strong>⌄</strong></button>
+              <div class="user-dropdown"><button data-view="profile">Mi perfil</button><button data-view="settings">Configuración</button><hr /><button id="dropdownLogout">Cerrar sesión</button></div>
+            </div>
+          </div>
+        </header>
+
+        <div id="viewContainer"></div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <div class="modal-backdrop" id="modalBackdrop">
+      <div class="modal" id="modal"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
